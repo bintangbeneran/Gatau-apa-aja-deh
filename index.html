@@ -1,0 +1,342 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before You Go</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: #0d0d0f;
+            color: #f1eee8;
+            overflow-x: hidden;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 25px;
+        }
+
+        /* OPENING */
+        .opening {
+            text-align: center;
+            position: relative;
+            flex-direction: column;
+        }
+
+        .opening small {
+            color: #999;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            margin-bottom: 30px;
+        }
+
+        .opening h1 {
+            font-size: clamp(45px, 10vw, 90px);
+            font-weight: normal;
+            letter-spacing: -2px;
+            margin-bottom: 25px;
+        }
+
+        .opening p {
+            color: #aaa;
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 500px;
+        }
+
+        .btn {
+            margin-top: 45px;
+            padding: 14px 30px;
+            border: 1px solid #555;
+            border-radius: 30px;
+            background: transparent;
+            color: #eee;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #eee;
+            color: #111;
+        }
+
+        /* LETTER */
+        .letter-section {
+            background: #121216;
+        }
+
+        .letter {
+            max-width: 700px;
+            width: 100%;
+            line-height: 2;
+            font-size: 18px;
+            color: #d7d3cc;
+        }
+
+        .letter .date {
+            font-family: Arial, sans-serif;
+            color: #777;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 45px;
+        }
+
+        .letter h2 {
+            font-size: 38px;
+            font-weight: normal;
+            margin-bottom: 35px;
+            color: #f5f2eb;
+        }
+
+        .letter p {
+            margin-bottom: 25px;
+        }
+
+        /* WORDS */
+        .words {
+            text-align: center;
+            flex-direction: column;
+        }
+
+        .words p {
+            max-width: 700px;
+            font-size: clamp(25px, 5vw, 45px);
+            line-height: 1.5;
+            color: #e8e4dc;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 1s ease;
+        }
+
+        .words p.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* LAST */
+        .last {
+            text-align: center;
+            flex-direction: column;
+            background: #09090a;
+        }
+
+        .last small {
+            color: #777;
+            letter-spacing: 3px;
+            font-family: Arial, sans-serif;
+            margin-bottom: 30px;
+        }
+
+        .last h2 {
+            font-size: clamp(35px, 7vw, 65px);
+            font-weight: normal;
+            line-height: 1.3;
+            max-width: 800px;
+        }
+
+        .last p {
+            margin-top: 45px;
+            color: #888;
+            font-size: 16px;
+        }
+
+        .signature {
+            margin-top: 60px;
+            font-style: italic;
+            color: #aaa;
+        }
+
+        /* FADE */
+        .fade {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: 1.2s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* SCROLL DOWN */
+        .scroll {
+            position: absolute;
+            bottom: 30px;
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+            color: #666;
+            animation: floating 2s infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(7px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- OPENING -->
+    <section class="opening">
+        <small>for someone who once mattered</small>
+
+        <h1>Before You Go.</h1>
+
+        <p>
+            Ada beberapa hal yang mungkin lebih mudah
+            ditulis daripada diucapkan.
+        </p>
+
+        <button class="btn" onclick="goToLetter()">
+            Buka suratnya
+        </button>
+
+        <div class="scroll">SCROLL</div>
+    </section>
+
+
+    <!-- LETTER -->
+    <section class="letter-section" id="letter">
+        <div class="letter fade">
+
+            <div class="date">
+                16 — 09 — 2026
+            </div>
+
+            <h2>Untuk kamu,</h2>
+
+            <p>
+                Gue sebenarnya nggak tahu harus mulai dari mana.
+                Mungkin karena ada beberapa hal yang kalau diucapkan
+                langsung justru terasa lebih sulit.
+            </p>
+
+            <p>
+                Jadi gue memilih untuk menuliskannya di sini.
+            </p>
+
+            <p>
+                Terima kasih untuk semua waktu yang pernah kita punya.
+                Untuk percakapan yang panjang, tawa yang sederhana,
+                dan hal-hal kecil yang mungkin waktu itu terasa biasa saja.
+            </p>
+
+            <p>
+                Sekarang gue sadar, ternyata hal-hal sederhana itu
+                yang nantinya paling gampang dirindukan.
+            </p>
+
+            <p>
+                Gue nggak tahu apa yang akan terjadi setelah ini.
+                Mungkin kita akan tetap saling mengenal,
+                mungkin juga perlahan menjadi dua orang yang
+                cuma pernah punya cerita yang sama.
+            </p>
+
+            <p>
+                Tapi apapun itu, gue tetap bersyukur pernah mengenal kamu.
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- WORDS -->
+    <section class="words">
+
+        <p class="word">
+            Kalau suatu hari nanti kamu mengingat gue...
+        </p>
+
+        <p class="word">
+            semoga yang kamu ingat bukan akhirnya.
+        </p>
+
+        <p class="word">
+            Tapi semua hal baik yang pernah kita bagi.
+        </p>
+
+    </section>
+
+
+    <!-- LAST -->
+    <section class="last">
+
+        <small>ONE LAST THING</small>
+
+        <h2 class="fade">
+            Semoga setelah ini,<br>
+            hidup memperlakukan kamu dengan baik.
+        </h2>
+
+        <p class="fade">
+            Jaga diri baik-baik.
+        </p>
+
+        <div class="signature fade">
+            — dari seseorang yang pernah menjadi bagian dari ceritamu.
+        </div>
+
+    </section>
+
+
+    <script>
+
+        function goToLetter() {
+            document.getElementById("letter").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+
+        // Fade in saat elemen masuk layar
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+
+                });
+            },
+            {
+                threshold: 0.2
+            }
+        );
+
+
+        document.querySelectorAll(".fade, .word")
+            .forEach(element => observer.observe(element));
+
+    </script>
+
+</body>
+</html>
+```
